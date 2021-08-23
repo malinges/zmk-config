@@ -1,11 +1,11 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+      url-base: https://github.com/malinges
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: nice_nano_revisions
       import: app/west.yml
   self:
     path: config
