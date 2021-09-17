@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: nice_nano_revisions
+      revision: workspace
       import: app/west.yml
   self:
     path: config
