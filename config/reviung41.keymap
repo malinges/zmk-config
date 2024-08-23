@@ -24,7 +24,7 @@
 };
 
 &soft_off {
-    hold-time-ms = <1000>;
+        hold-time-ms = <1000>;
 };
 
 / {
