@@ -36,25 +36,13 @@
                         bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
                 };
 
-                lhm: left_homerow_mods {
+                hrm: home_row_mods {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
                         flavor = "balanced";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <200>;
                         require-prior-idle-ms = <125>;
-                        hold-trigger-key-positions = <6 7 8 9 10 11 13 14 15 16 18 19 20 21 22 23 30 31 32 33 34 35 36 37 38 39 40>;
-                        bindings = <&kp>, <&kp>;
-                };
-
-                rhm: right_homerow_mods {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        flavor = "balanced";
-                        tapping-term-ms = <200>;
-                        quick-tap-ms = <200>;
-                        require-prior-idle-ms = <125>;
-                        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 19 20 21 22 24 25 26 27 28 29 36 37 38 39 40>;
                         bindings = <&kp>, <&kp>;
                 };
 
@@ -97,7 +85,7 @@
                 default_layer {
                         bindings = <
 &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
-&tpht CLCK ESC  &lhm LALT A     &lhm LCTRL S    &lhm LGUI D     &lhm LSHFT F    &kp G                           &kp H           &rhm RSHFT J    &rhm RGUI K     &rhm RCTRL L    &rhm RALT SEMI  &kp SQT
+&tpht CLCK ESC  &hrm LALT A     &hrm LCTRL S    &hrm LGUI D     &hrm LSHFT F    &kp G                           &kp H           &hrm RSHFT J    &hrm RGUI K     &hrm RCTRL L    &hrm RALT SEMI  &kp SQT
 &kp LCTRL       &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RET
                                                                 &kp LGUI        &mo LWR         &kp SPACE       &mo RSE         &kp RSHFT
                         >;
