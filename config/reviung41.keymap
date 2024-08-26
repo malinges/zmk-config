@@ -36,6 +36,28 @@
                         bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
                 };
 
+                lhm: left_homerow_mods {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        flavor = "balanced";
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <200>;
+                        require-prior-idle-ms = <125>;
+                        hold-trigger-key-positions = <6 7 8 9 10 11 13 14 15 16 18 19 20 21 22 23 30 31 32 33 34 35 36 37 38 39 40>;
+                        bindings = <&kp>, <&kp>;
+                };
+
+                rhm: right_homerow_mods {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        flavor = "balanced";
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <200>;
+                        require-prior-idle-ms = <125>;
+                        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 19 20 21 22 24 25 26 27 28 29 36 37 38 39 40>;
+                        bindings = <&kp>, <&kp>;
+                };
+
                 // rgb_ar: rgb_ug_auto_repeat_behavior {
                 //         compatible = "zmk,behavior-auto-repeat";
                 //         label = "RGB_AR";
@@ -65,37 +87,37 @@
 
                 default_layer {
                         bindings = <
-   &kp TAB      &kp Q     &kp W     &kp E     &kp R     &kp T              &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
-   &mt LALT ESC &kp A     &kp S     &kp D     &kp F     &kp G              &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL    &kp Z     &kp X     &kp C     &kp V     &kp B              &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RET
-                                              &kp LGUI  &mo LWR &kp SPACE  &mo RSE   &kp RSHFT
+&kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
+&mt LALT ESC    &lhm LALT A     &lhm LCTRL S    &lhm LGUI D     &lhm LSHFT F    &kp G                           &kp H           &rhm RSHFT J    &rhm RGUI K     &rhm RCTRL L    &rhm RALT SEMI  &kp SQT
+&kp LCTRL       &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RET
+                                                                &kp LGUI        &mo LWR         &kp SPACE       &mo RSE         &kp RSHFT
                         >;
                 };
 
                 lower_layer {
                         bindings = <
-   &kp GRAVE    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5             &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp DEL
-   &trans       &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH           &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
-   &trans       &kp ESC   &kp LGUI  &kp LALT  &kp CLCK  &mctl_td           &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-                                              &trans    &trans   &trans    &trans    &trans
+&kp GRAVE       &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                          &kp N6          &kp N7          &kp N8          &kp N9          &kp N0          &kp DEL
+&trans          &kp MINUS       &kp EQUAL       &kp LBKT        &kp RBKT        &kp BSLH                        &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6
+&trans          &kp ESC         &kp LGUI        &kp LALT        &kp CLCK        &mctl_td                        &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp F12
+                                                                &trans          &trans          &trans          &trans          &trans
                         >;
                 };
 
                 raise_layer {
                         bindings = <
-   &kp TILDE    &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT          &kp CARET &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR  &kp DEL
-   &trans       &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE           &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &none     &none
-   &trans       &kp ESC   &kp RGUI  &kp RALT  &kp CLCK  &none              &kp HOME  &kp END   &kp PG_UP &kp PG_DN &kp PSCRN &trans
-                                              &trans    &trans   &trans    &trans    &trans
+&kp TILDE       &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT                       &kp CARET       &kp AMPS        &kp ASTRK       &kp LPAR        &kp RPAR        &kp DEL
+&trans          &kp UNDER       &kp PLUS        &kp LBRC        &kp RBRC        &kp PIPE                        &kp LEFT        &kp UP          &kp DOWN        &kp RIGHT       &none           &none
+&trans          &kp ESC         &kp RGUI        &kp RALT        &kp CLCK        &none                           &kp HOME        &kp END         &kp PG_UP       &kp PG_DN       &kp PSCRN       &trans
+                                                                &trans          &trans          &trans          &trans          &trans
                         >;
                 };
 
                 adjust_layer {
                         bindings = <
-   &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_TOG               &ext_power EP_TOG &kp C_VOL_DN    &kp C_MUTE      &kp C_VOL_UP    &kp C_BRI_DN    &kp C_BRI_UP
-   &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD &none                           &none           &kp C_PREV      &kp C_PP        &kp C_NEXT      &none           &bootloader
-   &trans          &none           &none           &kp MSSFULL     &kp MSSAREA     &kp MSSAPP                      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_CLR
-                                                                   &trans          &trans          &soft_off       &trans          &trans
+&rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_TOG               &ext_power EP_TOG &kp C_VOL_DN    &kp C_MUTE      &kp C_VOL_UP    &kp C_BRI_DN    &kp C_BRI_UP
+&rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD &none                           &none           &kp C_PREV      &kp C_PP        &kp C_NEXT      &none           &bootloader
+&trans          &none           &none           &kp MSSFULL     &kp MSSAREA     &kp MSSAPP                      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_CLR
+                                                                &trans          &trans          &soft_off       &trans          &trans
                         >;
                 };
         };
