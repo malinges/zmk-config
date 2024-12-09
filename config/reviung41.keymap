@@ -53,15 +53,6 @@
                         bindings = <&kp>, <&kp>;
                 };
 
-                tpht: tap_preferred_hold_tap {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        flavor = "tap-preferred";
-                        tapping-term-ms = <200>;
-                        quick-tap-ms = <200>;
-                        bindings = <&kp>, <&kp>;
-                };
-
                 // rgb_ar: rgb_ug_auto_repeat_behavior {
                 //         compatible = "zmk,behavior-auto-repeat";
                 //         label = "RGB_AR";
@@ -92,7 +83,7 @@
                 default_layer {
                         bindings = <
 &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
-&tpht CLCK ESC  &kp A           &hrm LALT S     &hrm LCTRL D    &hrm LGUI F     &kp G                           &kp H           &hrm RGUI J     &hrm RCTRL K    &hrm RALT L     &kp SEMI        &kp SQT
+&mt LALT ESC    &kp A           &hrm LALT S     &hrm LCTRL D    &hrm LGUI F     &kp G                           &kp H           &hrm RGUI J     &hrm RCTRL K    &hrm RALT L     &kp SEMI        &kp SQT
 &kp LCTRL       &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RET
                                                                 &kp LGUI        &mo LWR         &kp SPACE       &mo RSE         &shft_td
                         >;
@@ -102,7 +93,7 @@
                         bindings = <
 &kp GRAVE       &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                          &kp N6          &kp N7          &kp N8          &kp N9          &kp N0          &kp DEL
 &trans          &kp MINUS       &kp EQUAL       &kp LBKT        &kp RBKT        &kp BSLH                        &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6
-&trans          &none           &none           &none           &none           &mctl_td                        &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp F12
+&trans          &none           &none           &none           &kp CLCK        &mctl_td                        &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp F12
                                                                 &trans          &trans          &trans          &trans          &trans
                         >;
                 };
